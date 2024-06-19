@@ -7,35 +7,33 @@ The code for this project is provided in the included Jupyter Notebook file (fac
 
 Instructions:
 
-Install OpenCV:(https://github.com/user-attachments/files/15901580/geopy.docx)
-
+1. Install OpenCV:
 Make sure you have OpenCV installed. You can install it using pip on command line:
 pip install opencv-python
 
-Run the Jupyter Notebook:
+2. Run the Jupyter Notebook:
 Open a Jupyter Notebook and open the face_blurring.ipynb file. Run the code cells sequentially.
 
 Explanation:
 The code performs the following steps:
-
-Imports:
+1. Imports:
 cv2: OpenCV library for image processing.
-Face Detection:
+2. Face Detection:
 Loads a pre-trained face detection classifier (haarcascade_frontalface_default.xml) that identifies faces in images.
-Webcam Access:
+3. Webcam Access:
 Opens the default webcam (cap = cv2.VideoCapture(0)) to capture video frames.
-Real-Time Processing:
+4. Real-Time Processing:
 Uses a while loop to continuously read frames from the webcam.
-Frame Conversion:
+5. Frame Conversion:
 Converts each frame to grayscale (gray_frame) for better face detection performance.
-Face Detection:
+6. Face Detection:
 Uses the classifier to find faces in the grayscale frame (faces = face_cascade.detectMultiScale(...)).
-Face Blurring:
+7. Face Blurring:
 Iterates through each detected face ((x, y, w, h) coordinates):
 Extracts the region of interest (ROI) containing the face (face_roi).
 Applies a Gaussian blur effect to the ROI (blurred_face = cv2.GaussianBlur(...)). This blurs the pixels, obscuring the details of the face.
 Replaces the original face ROI with the blurred version in the main frame (frame[y:y+h, x:x+w] = blurred_face).
-Display and Exit:
+8. Display and Exit:
 Displays the blurred frame with cv2.imshow('Blurred Faces', frame).
 Waits for a key press (cv2.waitKey(1)) to allow for user exit. Pressing Enter (key code 13) will terminate the program.
 Releases the webcam capture and cleans up resources (cv2.destroyAllWindows(), cap.release()).
