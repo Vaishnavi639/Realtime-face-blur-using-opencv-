@@ -1,4 +1,5 @@
 Real-Time Face Blurring with OpenCV (Python)
+
 This project demonstrates how to use OpenCV (Python) to access your device's camera and apply a Gaussian blur effect to any detected faces in real-time. This can be useful for privacy applications where you want to obfuscate faces in a video stream.
 
 Code:
