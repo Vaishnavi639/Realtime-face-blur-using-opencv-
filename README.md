@@ -1,46 +1,73 @@
-Real-Time Face Blurring with OpenCV (Python)
+# Real-Time Face Blurring with OpenCV (Python) #
 
 This project demonstrates how to use OpenCV (Python) to access your device's camera and apply a Gaussian blur effect to any detected faces in real-time. This can be useful for privacy applications where you want to obfuscate faces in a video stream.
 
-Code:
+## Code: ##
 The code for this project is provided in the included Jupyter Notebook file (face_blurring.ipynb).
 
-Instructions:
+## Instructions: ##
 
-1. Install OpenCV:
+**1. Install OpenCV:**
 Make sure you have OpenCV installed. You can install it using pip on command line:
-pip install opencv-python
 
-2. Run the Jupyter Notebook:
+
+    pip install opencv-python
+
+
+**2. Run the Jupyter Notebook:**
 Open a Jupyter Notebook and open the face_blurring.ipynb file. Run the code cells sequentially.
 
-Explanation:
+## Explanation: ##
+
 The code performs the following steps:
-1. Imports:
+
+**1. Imports:**
+
 cv2: OpenCV library for image processing.
-2. Face Detection:
+
+**2. Face Detection:**
+
 Loads a pre-trained face detection classifier (haarcascade_frontalface_default.xml) that identifies faces in images.
-3. Webcam Access:
+
+**3. Webcam Access:**
+
 Opens the default webcam (cap = cv2.VideoCapture(0)) to capture video frames.
-4. Real-Time Processing:
+
+**4. Real-Time Processing:**
+
 Uses a while loop to continuously read frames from the webcam.
-5. Frame Conversion:
+
+**5. Frame Conversion:**
+
 Converts each frame to grayscale (gray_frame) for better face detection performance.
-6. Face Detection:
+
+**6. Face Detection:**
+
 Uses the classifier to find faces in the grayscale frame (faces = face_cascade.detectMultiScale(...)).
-7. Face Blurring:
+
+**7. Face Blurring:**
+
 Iterates through each detected face ((x, y, w, h) coordinates):
+
 Extracts the region of interest (ROI) containing the face (face_roi).
+
 Applies a Gaussian blur effect to the ROI (blurred_face = cv2.GaussianBlur(...)). This blurs the pixels, obscuring the details of the face.
+
 Replaces the original face ROI with the blurred version in the main frame (frame[y:y+h, x:x+w] = blurred_face).
-8. Display and Exit:
+
+**8. Display and Exit:**
+
 Displays the blurred frame with cv2.imshow('Blurred Faces', frame).
+
 Waits for a key press (cv2.waitKey(1)) to allow for user exit. Pressing Enter (key code 13) will terminate the program.
+
 Releases the webcam capture and cleans up resources (cv2.destroyAllWindows(), cap.release()).
 
-Additional Notes:
+## Additional Notes: ##
 
 You can adjust the blur parameters ((99, 99), 20) in the cv2.GaussianBlur function to fine-tune the blurring effect.
+
 Explore other OpenCV functions for further image processing tasks.
+
 Refer to the OpenCV documentation https://docs.opencv.org/4.x/ for more details on face detection and other functionalities.
 
